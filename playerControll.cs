@@ -1,5 +1,6 @@
 using System.Data.SqlTypes;
 using UnityEngine;
+using TMpro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class PlayerController : MonoBehaviour
     public int addJumps;
     private int jumpVerify;
     public bool isGrounded;
+
+    [Header("Atributos")]
+    public int life;
+    public TextMeshProUGUI textLife; 
 
 
     void Start()
@@ -46,6 +51,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        textLife.text = life.ToString();
     }
 
     private void FixedUpdate()
